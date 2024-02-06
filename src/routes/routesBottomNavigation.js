@@ -13,14 +13,23 @@ export default function RoutesBottomNavigation() {
         <Tab.Screen
             name='Salvar Senha'
             component={SavePass}
+            options={{
+                headerShown: false
+            }}
         />
         <Tab.Screen
             name='Gerar Senha'
             component={GeneratePass}
+            options={{
+                headerShown: false
+            }}
         />
         <Tab.Screen
             name='Senhas Salvas'
             component={SavedPass}
+            options={{
+                headerShown: false
+            }}
         />
     </Tab.Navigator>
     );

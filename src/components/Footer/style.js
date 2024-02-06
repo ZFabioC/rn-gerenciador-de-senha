@@ -2,13 +2,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     footer: {
-        borderTopWidth: 1,
         borderColor: 'gray',
         alignItems: 'center',
         padding: 5,        
+        position: 'absolute',
+        bottom: 5
+        
     },
     footerText: {
-        fontWeight:'500',
+        fontWeight:'400',
         fontSize: 12
     }
 })
