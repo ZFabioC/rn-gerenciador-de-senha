@@ -3,7 +3,6 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import Header from '../../../../components/Header';
 import styles from './style';
 import Input from './components/input';
-import Footer from '../../../../components/Footer/index'
 import { useState } from 'react';
 
 export default function SavePass() {
@@ -44,7 +43,6 @@ export default function SavePass() {
       <Text style={styles.textButtonSignIn}>Cadastrar Credenciais</Text>
     </TouchableOpacity>
 
-    <Footer/>
    </View>
   );
 }
