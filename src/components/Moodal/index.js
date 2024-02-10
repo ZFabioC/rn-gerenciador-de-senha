@@ -4,7 +4,6 @@ import { AntDesign } from '@expo/vector-icons';
 
 import styles from './style';
 import Button from '../Button';
-import { useState } from 'react';
 
 export default function Moodal({ visible, onClose }) {
 
