@@ -8,26 +8,25 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         gap: 5,
         marginTop: 10,
-        padding: 5,
+        padding: 10,
         backgroundColor: '#fff',
     },
     containerTitle: {
-        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     title: {
         fontWeight: 'bold',
         fontSize: 15
     },
-    semiTitle: {
+    subTitle: {
         fontWeight: '500',
         fontSize: 15,
-        marginLeft: 5
     },
-    button: {
-        position: 'relative',
-        top: 5,
-        right: 10
-    }
+    info: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
 })
 
 export default styles

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Slider from '@react-native-community/slider';
 
 import Header from '../../../../components/Header';
-import Button from '../../../../components/Button';
+import ButtonIcon from '../../../../components/ButtonIcon';
 import Moodal from '../../../../components/Moodal';
 
 import styles from './style/';
@@ -57,7 +57,7 @@ export default function GeneratePass() {
         />  
       </View>
 
-      <Button text={'Gerar Senha'} click={generatePass}/>
+      <ButtonIcon text={'Gerar Senha'} click={generatePass}/>
 
       <Moodal visible={modalVisible} onClose={() => setModalVisible(!modalVisible)}/>
       

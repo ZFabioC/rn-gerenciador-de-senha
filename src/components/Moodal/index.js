@@ -3,7 +3,7 @@ import { Modal, Text, View, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import styles from './style';
-import Button from '../Button';
+import Button from '../ButtonIcon';
 
 export default function Moodal({ visible, onClose }) {
 

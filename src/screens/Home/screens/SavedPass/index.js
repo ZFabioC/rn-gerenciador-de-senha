@@ -4,10 +4,12 @@ import styles from './style/';
 
 import Header from '../../../../components/Header';
 import PasswordCard from './PasswordCard';
+import { useEffect, useState } from 'react';
 
 export default function SavedPass() {
 
-  const DATA = [
+  const [id, setId] = useState('')
+  const [data, setData] = useState([
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       platform: 'Instagram',
@@ -26,7 +28,13 @@ export default function SavedPass() {
       user: 'Third Item',
       password: '123456678',
     },
-  ];
+  ])
+
+  const removeItem = (id) => {
+    const filterArray = data.filter(item => item.id !== id)
+    setData(filterArray)
+  }
+
 
   return (
     <View style={styles.container}>
@@ -35,8 +43,8 @@ export default function SavedPass() {
       <View style={styles.content}>
         <FlatList
         style={{width: '90%'}}
-        data={DATA}
-        renderItem={({ item }) => <PasswordCard platform={item.platform} user={item.user} password={item.password} />}
+        data={data}
+        renderItem={({ item }) => <PasswordCard data={item} removeItemId={removeItem}/>}
         keyExtractor={item => item.id}
         />
       </View>
