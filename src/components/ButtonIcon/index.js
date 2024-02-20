@@ -3,8 +3,6 @@ import { AntDesign } from '@expo/vector-icons';
 
 import styles from './style/'
 
-//style={styles.button}
-
 export default function ButtonIcon({ icon, size, color, styles, click }) {
   return (
     <TouchableOpacity onPress={click}>

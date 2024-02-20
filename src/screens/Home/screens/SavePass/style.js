@@ -18,8 +18,17 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: '800',
         fontSize: 17
+    },
+    containerPassword: {
+        justifyContent: 'center',
+        width: '100%',
+        alignItems: 'center'
+    },
+    buttonViewPassword: {
+        position: 'absolute',
+        right: -145,
+        bottom: 5
     }
-
 })
 
 export default styles
