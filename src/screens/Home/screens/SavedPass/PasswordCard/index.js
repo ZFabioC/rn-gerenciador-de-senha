@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Alert } from 'react-native';
 import { useState } from 'react';
 import * as Clipboard from 'expo-clipboard'
 
@@ -6,23 +6,34 @@ import ButtonIcon from '../../../../../components/ButtonIcon';
 
 import styles from './style/';
 
-export default function PasswordCard({ data, removeItemId }) {
+export default function PasswordCard({ data, removeItemId, clickedButtonDelete }) {
 
-    const { id, platform, user, password } = data
+  const { id, platform, user, password } = data
 
-    const [visiblePassword, setVisiblePassword] = useState(false)
+  const [visiblePassword, setVisiblePassword] = useState(false)
 
-    const viewPassword = () => {
-        setVisiblePassword(!visiblePassword)
-    }
+  const viewPassword = () => {
+    setVisiblePassword(!visiblePassword)
+  }
 
-    const copyToClipboard = async (string) => {
-        await Clipboard.setStringAsync(string)
-    }
+  const copyToClipboard = async (string) => {
+    await Clipboard.setStringAsync(string)
+  }
 
-    const deleteItem = () => {
-        removeItemId(id)
-    }
+  const deleteItem = () => {
+    Alert.alert(
+      "Deletar",
+      "Tem certeza que deseja deletar este item ?",
+      [
+        {text: 'OK', onPress: () => {
+          removeItemId(id) 
+          clickedButtonDelete()
+        }},
+        {text: 'Cancelar'}
+      ],
+      {cancelable: false}
+    )
+  }
 
     return (
         <View style={styles.container}>

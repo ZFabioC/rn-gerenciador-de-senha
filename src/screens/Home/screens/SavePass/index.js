@@ -1,6 +1,7 @@
 import { View, TouchableOpacity, Text } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native'
+import Users from '../../../../services/database/Users'
 
 import Header from '../../../../components/Header';
 import Input from './components/input';
@@ -22,6 +23,20 @@ export default function SavePass() {
       setPassword(generatedPass)
     }
   },[generatedPass])
+
+  const credencials = {
+    platform,
+    user,
+    password
+  }
+  
+  const saveCredencials = () => {
+    Users.insertUser(credencials)
+    setPlatform('')
+    setUser('')
+    setPassword('')
+    alert('Inserido com sucesso!')
+  }
 
  return (
    <View style={styles.container}>
@@ -59,7 +74,7 @@ export default function SavePass() {
       />
     </View>
 
-    <TouchableOpacity style={styles.buttonSignIn}>
+    <TouchableOpacity style={styles.buttonSignIn} onPress={saveCredencials} >
       <Text style={styles.textButtonSignIn}>Cadastrar Credenciais</Text>
     </TouchableOpacity>
 
