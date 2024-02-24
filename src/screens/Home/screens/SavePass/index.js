@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, Alert } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native'
 import Users from '../../../../services/database/Users'
@@ -31,11 +31,27 @@ export default function SavePass() {
   }
   
   const saveCredencials = () => {
+    if (platform === '' || user === '' || password === '') {
+      
+      console.log(platform, user, password)
+      Alert.alert(
+        "Atenção",
+        "Todos os campos devem estar preenchidos!",
+        [
+          {
+            text: "OK"
+          }
+        ],
+        {cancelable: false}
+      )
+      return
+    }
+
     Users.insertUser(credencials)
     setPlatform('')
     setUser('')
     setPassword('')
-    alert('Inserido com sucesso!')
+    Alert.alert("Alerta", "Dados inseridos com sucesso!")
   }
 
  return (
