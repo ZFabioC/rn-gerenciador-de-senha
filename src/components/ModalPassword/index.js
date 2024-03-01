@@ -9,10 +9,12 @@ export default function ModalPassword({ password, onClose, navigate }) {
 
   return (
   <View style={styles.container}>
+
     <View style={styles.content}>
-      <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-        <AntDesign name="close" size={24} color="black" />
-      </TouchableOpacity>
+
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Senha Gerada</Text>
+      </View>
 
       <View style={styles.containerPassword}>
         <Text>{password}</Text> 
@@ -20,7 +22,12 @@ export default function ModalPassword({ password, onClose, navigate }) {
       </View>
 
       <ButtonSave text={'Salvar Senha'} click={navigate}/>
+      
+      <TouchableOpacity onPress={onClose}>
+        <Text style={styles.buttonText}>Voltar</Text>
+      </TouchableOpacity>
     </View>
+
   </View>
   );
 }

@@ -6,33 +6,36 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#00000040',
-        
     },
     content: {
-        alignItems: 'center', 
-        justifyContent: 'center',
         backgroundColor: '#fff',
         width: '85%',
         height: '25%',
         borderRadius: 8,
+        padding: 15,
+        gap: 15,
+        alignItems: 'center'
     },
-    closeButton: {
-        position: 'absolute',
-        right: 20,
-        top: 20,
+    titleContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title: {
+        fontWeight: '500',
+        fontSize: 17
     },
     containerPassword: {
         backgroundColor: '#e6eaf0',
         width: '85%',
         padding: 6,
+        paddingLeft: 14,
         borderRadius: 8,
         justifyContent: 'space-between',
         flexDirection: 'row',
-        marginBottom: 15
     },
-
-
-
+    buttonText: {
+        fontWeight: '400',
+    }
 })
 
 export default styles
